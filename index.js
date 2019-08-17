@@ -1,10 +1,11 @@
+const http = require('http');
 const express = require('express');
 const bodyParser = require('body-parser');
 
 const app = express();
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: false}));
+
 
 app.get('/', (req, res) => {
     res.send("Foi!");
@@ -12,10 +13,11 @@ app.get('/', (req, res) => {
 
 const rotas = require('./rotas');
 app.use('/api', rotas);
-/*app.get('/api', (req , res) =>{
-    res.send('Foi tbm!');
-})*/
 
-const port = 3000;
+const port =process.env.PORT || 3000;
 
-app.listen(port , () => { console.log('http://localhost:',port)});
+app.set("port", port)
+
+const server = http.createServer(index);
+
+server.listen(port);
