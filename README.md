@@ -9,6 +9,9 @@ Sistema de chamados
 npm install express
 npm install body-parser
 npm install http-status
+npm install nodemon
+npm install sequelize
+npm install mysql2
 
 # Endpoints utilizados no curso
 
